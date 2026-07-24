@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Egypt Heritage Films — A Documentary Studio</title>
+  <meta name="description" content="A collective of filmmakers documenting the history and heritage of Egypt, one film at a time." />
+  <meta property="og:title" content="Egypt Heritage Films" />
+  <meta property="og:description" content="Documentaries preserving the story of Egypt." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/logo-sm.jpg" />
+
+  <!-- Type: Fraunces (cinematic serif) · Archivo (grotesque body) · IBM Plex Mono (catalogue meta)
+       Arabic: Amiri (serif display) · Cairo (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Archivo:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark">
+      <div class="loader__word">Egypt Heritage Films</div>
+      <div class="loader__rule"></div>
+      <div class="loader__sub" data-i18n="tagline">Passion for Egypt's Heritage</div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="brand" aria-label="Egypt Heritage Films — home">
+        <img src="assets/logo.jpg" alt="Egypt Heritage Films logo" />
+        <span>
+          <span class="brand__name">Egypt Heritage</span>
+          <span class="brand__sub">Films</span>
+        </span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#work" data-i18n="nav.films">Films</a>
+        <a href="#team" data-i18n="nav.crew">Crew</a>
+        <a href="#about" data-i18n="nav.studio">Studio</a>
+        <a href="#why" data-i18n="nav.approach">Approach</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" class="active" aria-label="English">EN</button>
+          <button type="button" data-lang="fr" aria-label="Français">FR</button>
+          <button type="button" data-lang="ar" aria-label="العربية">ع</button>
+        </div>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1 · HERO -->
+    <section class="hero" id="hero">
+      <span class="hero__rail" aria-hidden="true" data-i18n="hero.rail">Est. Cairo — Documentary Studio</span>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <span class="eyebrow hero__eyebrow" data-i18n="hero.eyebrow">Documentary Studio · Egypt</span>
+          <h1 class="display hero__title" data-i18n="hero.title">
+            Egypt's story,
+            <span class="line2"><em>told in light.</em></span>
+          </h1>
+          <p class="lead hero__tag" data-i18n="hero.tag">A collective of filmmakers with one obsession — recording the country's history and heritage before it fades.</p>
+          <div class="hero__actions">
+            <a href="#work" class="btn" data-i18n="hero.btn">Explore the Films</a>
+            <a href="#contact" class="link"><span data-i18n="hero.link">Start a project</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+        <img class="hero__logo" id="heroLogo" src="assets/logo.jpg"
+             alt="Egypt Heritage Films — Eye of Horus, pyramid and film-strip emblem" />
+      </div>
+      <div class="hero__scroll" aria-hidden="true"><span data-i18n="hero.scroll">Scroll</span><i></i></div>
+    </section>
+
+    <!-- 2 · FILMS -->
+    <section class="section work" id="work">
+      <div class="container">
+        <div class="s-head" data-reveal>
+          <span class="idx" data-i18n="work.idx">01 — Selected Work</span>
+          <h2 class="display h-lg" data-i18n="work.title">Films from the field</h2>
+        </div>
+
+        <div class="work__intro" data-reveal>
+          <h3 class="display h-md work__intro-title" data-i18n="work.exTitle">Explore Our Stories</h3>
+          <p class="lead" data-i18n="work.exP1">Every documentary presented on this platform is showcased through a carefully selected preview, offering a window into the stories we tell and the heritage we preserve.</p>
+          <p data-i18n="work.exP2"><strong>Full-length versions are available in Arabic, English, and French</strong>, ensuring that our documentaries can reach audiences across cultures and borders.</p>
+          <p data-i18n="work.exP3">Whether you represent a television network, educational institution, cultural organization, festival, or distribution partner, we welcome inquiries regarding screenings, licensing, and collaborative opportunities.</p>
+          <p class="work__cta" data-i18n="work.exCta">Discover the preview. Experience the full story.</p>
+        </div>
+
+        <!-- Films are streamed from Google Drive: data-video is the /preview URL,
+             the card thumbnail comes from Drive's thumbnail endpoint. -->
+        <div class="films">
+          <article class="film" data-reveal
+                   data-video="https://drive.google.com/file/d/1yYDEXdmLXgruZGEpByBUhGRuFI118DvD/preview">
+            <div class="film__media">
+              <img src="https://drive.google.com/thumbnail?id=1yYDEXdmLXgruZGEpByBUhGRuFI118DvD&sz=w1200" alt="Film 01" loading="lazy" referrerpolicy="no-referrer" />
+              <span class="film__play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+            </div>
+            <div class="film__text">
+              <span class="film__index" data-i18n="film1.idx">01 / Portfolio</span>
+              <h3 class="film__title" data-i18n="film1.title">Film 01</h3>
+              <div class="film__meta"><span>2025</span></div>
+            </div>
+          </article>
+
+          <article class="film" data-reveal
+                   data-video="https://drive.google.com/file/d/1yZFH-ynGXxWPg5OnJfNq3fan7AmMKDLx/preview">
+            <div class="film__media">
+              <img src="https://drive.google.com/thumbnail?id=1yZFH-ynGXxWPg5OnJfNq3fan7AmMKDLx&sz=w1200" alt="Film 02" loading="lazy" referrerpolicy="no-referrer" />
+              <span class="film__play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+            </div>
+            <div class="film__text">
+              <span class="film__index" data-i18n="film2.idx">02 / Portfolio</span>
+              <h3 class="film__title" data-i18n="film2.title">Film 02</h3>
+              <div class="film__meta"><span>2025</span></div>
+            </div>
+          </article>
+
+          <article class="film" data-reveal
+                   data-video="https://drive.google.com/file/d/1yYRln51pMSo2RyPX9fD3YILJebd2pC3W/preview">
+            <div class="film__media">
+              <img src="https://drive.google.com/thumbnail?id=1yYRln51pMSo2RyPX9fD3YILJebd2pC3W&sz=w1200" alt="Film 03" loading="lazy" referrerpolicy="no-referrer" />
+              <span class="film__play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+            </div>
+            <div class="film__text">
+              <span class="film__index" data-i18n="film3.idx">03 / Portfolio</span>
+              <h3 class="film__title" data-i18n="film3.title">Film 03</h3>
+              <div class="film__meta"><span>2025</span></div>
+            </div>
+          </article>
+
+          <article class="film" data-reveal
+                   data-video="https://drive.google.com/file/d/1yVp_1SvSIGS2_JLfOaKosJya0cLTuSCc/preview">
+            <div class="film__media">
+              <img src="https://drive.google.com/thumbnail?id=1yVp_1SvSIGS2_JLfOaKosJya0cLTuSCc&sz=w1200" alt="Film 04" loading="lazy" referrerpolicy="no-referrer" />
+              <span class="film__play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+            </div>
+            <div class="film__text">
+              <span class="film__index" data-i18n="film4.idx">04 / Portfolio</span>
+              <h3 class="film__title" data-i18n="film4.title">Film 04</h3>
+              <div class="film__meta"><span>2025</span></div>
+            </div>
+          </article>
+
+          <article class="film" data-reveal
+                   data-video="https://drive.google.com/file/d/1yWnSyJ98w921Zvax2TSo-epRz2ob1ATD/preview">
+            <div class="film__media">
+              <img src="https://drive.google.com/thumbnail?id=1yWnSyJ98w921Zvax2TSo-epRz2ob1ATD&sz=w1200" alt="Film 05" loading="lazy" referrerpolicy="no-referrer" />
+              <span class="film__play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+            </div>
+            <div class="film__text">
+              <span class="film__index" data-i18n="film5.idx">05 / Portfolio</span>
+              <h3 class="film__title" data-i18n="film5.title">Film 05</h3>
+              <div class="film__meta"><span>2025</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · CREW -->
+    <section class="section team" id="team">
+      <div class="container">
+        <div class="s-head" data-reveal>
+          <span class="idx" data-i18n="team.idx">02 — The Collective</span>
+          <h2 class="display h-lg" data-i18n="team.title">Keepers of the story</h2>
+        </div>
+
+        <div class="crew">
+          <!-- Replace each portrait src with a real photo when you have one.
+               Full bios live in the hidden <template> and open in the bio modal. -->
+
+          <!-- 01 · Wael El Alfy -->
+          <article class="person" data-reveal>
+            <div class="person__photo">
+              <img src="assets/team-2.png" alt="Wael El Alfy" loading="lazy" />
+              <span class="person__no">01</span>
+            </div>
+            <div class="person__body">
+              <span class="person__role" data-i18n="p1.role">Presenter · Narrator · Professional Voice-Over (FR / AR)</span>
+              <h3 class="person__name" data-i18n="p1.name">Wael El Alfy</h3>
+              <p class="person__bio" data-i18n="p1.sum">Presenter and narrator at Nile TV International and a professional voice-over artist in French and Arabic, serving Egypt's heritage for over three decades.</p>
+              <button class="person__more" type="button" data-i18n="crew.more">Read full bio</button>
+              <template class="person__full" data-i18n="p1.full">
+                <p>For over three decades, I have devoted my career to conveying Egyptian culture, history and heritage to French-speaking and Arabic-speaking audiences.</p>
+                <p>A French-language tour-guide lecturer since 1990 and a graduate of the Jesuit College of Cairo, I have built a career founded on mastery of the French language, excellence in narration and a passion for Egypt.</p>
+                <p>Today I am a presenter and narrator at Nile TV International, where I take part in producing programmes and documentaries devoted to Egyptian civilisation, archaeology, heritage and cultural tourism. Among the productions I have contributed to are <strong>Description of Egypt</strong>, <strong>Treasures of Egypt</strong>, <strong>The Culture Journal</strong> and <strong>Egypt at 1 pm</strong>.</p>
+                <p>Throughout my career, I have provided narration and presentation for many audiovisual productions, highlighting Egypt's most emblematic Pharaonic, Coptic and Islamic sites. My work serves television channels as much as cultural institutions, documentary producers and international organisations.</p>
+                <p>My voice, recognised for its clarity, warmth and precision, adapts to a wide range of projects: documentaries, institutional films, reports, tourism content, audio guides, museums, podcasts and communication campaigns.</p>
+                <p>Every project is, for me, an opportunity to tell a story with authenticity, emotion and professional rigour.</p>
+                <h4 class="bio__subhead">Skills</h4>
+                <ul class="bio__skills">
+                  <li>Television presenting</li>
+                  <li>Documentary narration</li>
+                  <li>Professional voice-over in French and Arabic</li>
+                  <li>Cultural and tourism reporting</li>
+                  <li>Writing and adapting scripts</li>
+                  <li>Heritage and audiovisual communication</li>
+                </ul>
+                <blockquote class="bio__quote">To give heritage a voice, to tell history with passion, and to build a lasting bond between cultures.</blockquote>
+              </template>
+              <div class="person__social">
+                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 3.3.15 4.8 1.7 5 5 .05 1.2.06 1.6.06 4.7s0 3.5-.06 4.7c-.2 3.3-1.7 4.8-5 5-1.2.05-1.6.06-4.8.06s-3.6 0-4.8-.06c-3.3-.2-4.8-1.7-5-5C2.2 15.5 2.2 15.1 2.2 12s0-3.5.06-4.7c.2-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0 3.2a6.6 6.6 0 100 13.2 6.6 6.6 0 000-13.2zm0 10.9a4.3 4.3 0 110-8.6 4.3 4.3 0 010 8.6zm6.9-11.1a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.6h.05c.53-1 1.8-2 3.75-2C20.5 8.6 21 11 21 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02 · Hani Samir -->
+          <article class="person" data-reveal>
+            <div class="person__photo">
+              <img src="assets/team-3.png" alt="Hani Samir" loading="lazy" />
+              <span class="person__no">02</span>
+            </div>
+            <div class="person__body">
+              <span class="person__role" data-i18n="p2.role">Director · Producer</span>
+              <h3 class="person__name" data-i18n="p2.name">Hani Samir</h3>
+              <p class="person__bio" data-i18n="p2.sum">Director and producer of English-language television — talk shows, music videos, travel features and channel branding made for international audiences.</p>
+              <button class="person__more" type="button" data-i18n="crew.more">Read full bio</button>
+              <template class="person__full" data-i18n="p2.full">
+                <p>Throughout my career, I have led and delivered a diverse range of content—from live talk shows and political satire to music videos, travel features, and documentaries—many of which were broadcast in English and targeted at international audiences. My work with Nile TV's English-language programs, such as <strong>Nile Café</strong> and <strong>Generation Talk</strong>, has equipped me with the cultural fluency and editorial sensitivity needed to engage diverse viewerships.</p>
+                <p>I have also directed and produced branding campaigns and visual identities for national TV channels, collaborating with international teams and integrating cutting-edge visual design techniques including chroma and motion graphics. My hands-on skills in editing (Avid, Final Cut) and visual storytelling allow me to deliver polished productions from concept to final cut.</p>
+              </template>
+              <div class="person__social">
+                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 3.3.15 4.8 1.7 5 5 .05 1.2.06 1.6.06 4.7s0 3.5-.06 4.7c-.2 3.3-1.7 4.8-5 5-1.2.05-1.6.06-4.8.06s-3.6 0-4.8-.06c-3.3-.2-4.8-1.7-5-5C2.2 15.5 2.2 15.1 2.2 12s0-3.5.06-4.7c.2-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0 3.2a6.6 6.6 0 100 13.2 6.6 6.6 0 000-13.2zm0 10.9a4.3 4.3 0 110-8.6 4.3 4.3 0 010 8.6zm6.9-11.1a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.6h.05c.53-1 1.8-2 3.75-2C20.5 8.6 21 11 21 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 · Amr Nessim -->
+          <article class="person" data-reveal>
+            <div class="person__photo">
+              <img src="assets/team-1.png" alt="Amr Nessim" loading="lazy" />
+              <span class="person__no">03</span>
+            </div>
+            <div class="person__body">
+              <span class="person__role" data-i18n="p3.role">Senior Video Editor &amp; Producer</span>
+              <h3 class="person__name" data-i18n="p3.name">Amr Nessim</h3>
+              <p class="person__bio" data-i18n="p3.sum">Senior video editor and producer with 20 years crafting cinematic commercials, documentaries and AI-powered marketing films for global brands.</p>
+              <button class="person__more" type="button" data-i18n="crew.more">Read full bio</button>
+              <template class="person__full" data-i18n="p3.full">
+                <p>With 20 years of experience in video production, I specialize in crafting cinematic commercials, documentaries, corporate films, and AI-powered marketing videos that help brands communicate, engage, and grow across global markets.</p>
+              </template>
+              <div class="person__social">
+                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 3.3.15 4.8 1.7 5 5 .05 1.2.06 1.6.06 4.7s0 3.5-.06 4.7c-.2 3.3-1.7 4.8-5 5-1.2.05-1.6.06-4.8.06s-3.6 0-4.8-.06c-3.3-.2-4.8-1.7-5-5C2.2 15.5 2.2 15.1 2.2 12s0-3.5.06-4.7c.2-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0 3.2a6.6 6.6 0 100 13.2 6.6 6.6 0 000-13.2zm0 10.9a4.3 4.3 0 110-8.6 4.3 4.3 0 010 8.6zm6.9-11.1a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.6h.05c.53-1 1.8-2 3.75-2C20.5 8.6 21 11 21 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04 · Nermine Atta -->
+          <article class="person" data-reveal>
+            <div class="person__photo">
+              <img src="assets/team-4.png" alt="Nermine Atta" loading="lazy" />
+              <span class="person__no">04</span>
+            </div>
+            <div class="person__body">
+              <span class="person__role" data-i18n="p4.role">Project Coordinator · Consultant</span>
+              <h3 class="person__name" data-i18n="p4.name">Nermine Atta</h3>
+              <p class="person__bio" data-i18n="p4.sum">Project Coordinator of Egypt Heritage Films — educator, teacher trainer and French-education expert bridging learning, culture and storytelling.</p>
+              <button class="person__more" type="button" data-i18n="crew.more">Read full bio</button>
+              <template class="person__full" data-i18n="p4.full">
+                <p>I am an experienced <strong>Project Coordinator, Teacher Trainer, and French Education Expert</strong> with a strong commitment to educational excellence and professional development. Since <strong>2018</strong>, I have been leading and coordinating educational projects, designing impactful training programs, and empowering educators to achieve excellence in teaching and learning.</p>
+                <p>As the <strong>First French Inspector</strong>, I provide pedagogical leadership, quality assurance, and continuous support for French language education. I am also a <strong>Certified Training Program Designer</strong>, accredited by the <strong>Professional Academy for Teachers in Egypt</strong>, with extensive experience in developing competency-based training programs.</p>
+                <p>In addition, I am an <strong>Accredited DELF Examiner and Marker (up to B2 level)</strong>, ensuring fair and high-quality assessment in accordance with the Common European Framework of Reference for Languages (CEFR).</p>
+                <p>Beyond education, I work as a <strong>Freelance Consultant</strong> with a deep passion for documentary film marketing, cultural storytelling, and digital communication. I currently serve as the <strong>Project Coordinator of the "Egypt Heritage Films" initiative</strong>, a documentary film project dedicated to preserving, promoting, and showcasing Egypt's rich cultural heritage through compelling visual storytelling.</p>
+                <p>My expertise combines education, project management, training, international language assessment, and creative communication, allowing me to bridge the worlds of learning, culture, and innovation.</p>
+                <blockquote class="bio__quote">My mission is to empower people, inspire lifelong learning, and create meaningful projects that leave a lasting educational and cultural impact.</blockquote>
+              </template>
+              <div class="person__social">
+                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 3.3.15 4.8 1.7 5 5 .05 1.2.06 1.6.06 4.7s0 3.5-.06 4.7c-.2 3.3-1.7 4.8-5 5-1.2.05-1.6.06-4.8.06s-3.6 0-4.8-.06c-3.3-.2-4.8-1.7-5-5C2.2 15.5 2.2 15.1 2.2 12s0-3.5.06-4.7c.2-3.3 1.7-4.8 5-5C8.4 2.2 8.8 2.2 12 2.2zm0 3.2a6.6 6.6 0 100 13.2 6.6 6.6 0 000-13.2zm0 10.9a4.3 4.3 0 110-8.6 4.3 4.3 0 010 8.6zm6.9-11.1a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.6h.05c.53-1 1.8-2 3.75-2C20.5 8.6 21 11 21 14.3V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · STUDIO / ABOUT -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <aside class="about__aside" data-reveal>
+          <span class="eyebrow" data-i18n="about.eyebrow">03 — The Studio</span>
+          <svg class="about__eye" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 40 C60 20 120 22 150 46"/>
+            <path d="M28 58 C60 40 118 42 150 58 C118 78 60 80 28 58 Z"/>
+            <circle cx="90" cy="58" r="10" fill="currentColor" stroke="none"/>
+            <path d="M150 58 C158 74 156 92 140 104"/>
+            <path d="M44 66 C40 84 56 92 66 84 C74 78 70 70 62 72"/>
+          </svg>
+        </aside>
+        <div class="about__main">
+          <h2 class="display h-md" data-i18n="about.title">We document what is fading faster than it is being recorded.</h2>
+          <p data-i18n="about.p1">Egypt's story is written in stone, sand and spoken word — and much of it is slipping away. <strong>Egypt Heritage Films exists to slow that loss.</strong> We record the monuments, the makers and the everyday customs that carry the country's identity forward.</p>
+          <p class="pullquote" data-i18n="about.quote">Heritage shown as something still lived — not only remembered.</p>
+          <p data-i18n="about.p2">We work slowly and on location, with historians beside the camera, so that what reaches the screen is both cinematic and true.</p>
+          <div class="about__pillars">
+            <div class="pillar">
+              <h4 data-i18n="about.mh">Mission</h4>
+              <p data-i18n="about.mp">To document Egypt's history and heritage with rigour, artistry and respect.</p>
+            </div>
+            <div class="pillar">
+              <h4 data-i18n="about.vh">Vision</h4>
+              <p data-i18n="about.vp">A living archive of film that keeps the country's story vivid for the next generation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · APPROACH / WHY US -->
+    <section class="section why" id="why">
+      <div class="container">
+        <div class="s-head" data-reveal>
+          <span class="idx" data-i18n="why.idx">04 — Why work with us</span>
+          <h2 class="display h-lg" data-i18n="why.title">A way of working</h2>
+        </div>
+        <div class="creed">
+          <div class="creed__row" data-reveal>
+            <span class="creed__no">01</span>
+            <h3 class="creed__title" data-i18n="c1.t">Authentic storytelling</h3>
+            <p class="creed__desc" data-i18n="c1.d">Every narrative is grounded in real places and real voices, told with the people who live it.</p>
+          </div>
+          <div class="creed__row" data-reveal>
+            <span class="creed__no">02</span>
+            <h3 class="creed__title" data-i18n="c2.t">Cinematic quality</h3>
+            <p class="creed__desc" data-i18n="c2.d">Shot and finished to feature standard — colour, sound and frame all treated with equal care.</p>
+          </div>
+          <div class="creed__row" data-reveal>
+            <span class="creed__no">03</span>
+            <h3 class="creed__title" data-i18n="c3.t">Cultural depth</h3>
+            <p class="creed__desc" data-i18n="c3.d">Historians on the team keep the detail right, so nuance survives the edit intact.</p>
+          </div>
+          <div class="creed__row" data-reveal>
+            <span class="creed__no">04</span>
+            <h3 class="creed__title" data-i18n="c4.t">Professional production</h3>
+            <p class="creed__desc" data-i18n="c4.d">Reliable, end-to-end delivery — from the first location scout to a graded, broadcast-ready master.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__intro" data-reveal>
+          <span class="eyebrow" data-i18n="contact.eyebrow">05 — Contact</span>
+          <h2 class="display h-lg" style="margin-top:1.4rem" data-i18n="contact.title">Let's tell a story together.</h2>
+          <p class="lead measure" data-i18n="contact.lead">Commissioning a documentary, planning a heritage series, or exploring a partnership? We'd like to hear from you.</p>
+
+          <dl class="contact__lines">
+            <div class="contact__line"><dt data-i18n="ct.email">Email</dt><dd><a href="mailto:hello@egyptheritagefilms.com">hello@egyptheritagefilms.com</a></dd></div>
+            <div class="contact__line"><dt data-i18n="ct.studio">Studio</dt><dd data-i18n="ct.studioV">Cairo, Egypt</dd></div>
+            <div class="contact__line"><dt data-i18n="ct.phone">Phone</dt><dd><a href="tel:+201000000000">+20 100 000 0000</a></dd></div>
+          </dl>
+
+          <!-- Replace the number with your WhatsApp business line -->
+          <a class="link contact__wa" href="https://wa.me/201000000000?text=Hello%20Egypt%20Heritage%20Films" target="_blank" rel="noopener">
+            <span data-i18n="ct.wa">WhatsApp</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <form class="form" id="contactForm" data-reveal novalidate>
+          <div class="field" id="f-name">
+            <label for="name" data-i18n="f.name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" data-i18n-ph="ph.name" autocomplete="name" />
+            <p class="field__err" data-i18n="e.name">Please enter your name.</p>
+          </div>
+          <div class="field" id="f-email">
+            <label for="email" data-i18n="f.email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+            <p class="field__err" data-i18n="e.email">Please enter a valid email address.</p>
+          </div>
+          <div class="field" id="f-message">
+            <label for="message" data-i18n="f.msg">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project…" data-i18n-ph="ph.msg"></textarea>
+            <p class="field__err" data-i18n="e.msg">Please write at least a few words.</p>
+          </div>
+          <button type="submit" class="btn" data-i18n="f.send">Send Message</button>
+          <p class="form__note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="#hero" class="footer__brand">
+          <img src="assets/logo.jpg" alt="Egypt Heritage Films logo" />
+          <span>
+            <span class="brand__name">Egypt Heritage Films</span>
+            <span class="brand__sub" data-i18n="tagline">Passion for Egypt's Heritage</span>
+          </span>
+        </a>
+        <nav class="footer__nav" aria-label="Footer">
+          <a href="#work" data-i18n="nav.films">Films</a>
+          <a href="#team" data-i18n="nav.crew">Crew</a>
+          <a href="#about" data-i18n="nav.studio">Studio</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; <span id="year"></span> Egypt Heritage Films</p>
+        <p data-i18n="footer.made">Cairo — Made with reverence for Egypt's story</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- VIDEO MODAL -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="modal__dialog">
+      <button class="modal__close" id="modalClose" aria-label="Close video">
+        <span data-i18n="modal.close">Close</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="modal__frame">
+        <iframe id="modalFrame" title="Film player" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      </div>
+      <div class="modal__cap">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIO MODAL -->
+  <div class="modal modal--bio" id="bioModal" role="dialog" aria-modal="true" aria-label="Biography">
+    <div class="modal__dialog bio">
+      <button class="modal__close" id="bioClose" aria-label="Close biography">
+        <span data-i18n="modal.close">Close</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="bio__head">
+        <h3 id="bioName" class="bio__name"></h3>
+        <p id="bioRole" class="bio__role"></p>
+      </div>
+      <div id="bioBody" class="bio__body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
