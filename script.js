@@ -40,6 +40,7 @@
       "crew.more": "Lire la bio complète",
       "p1.role": "Présentateur · Narrateur · Voix Off Professionnelle (FR / AR)",
       "p1.sum": "Présentateur et narrateur à Nile TV International, voix off professionnelle en français et en arabe, au service du patrimoine égyptien depuis plus de trois décennies.",
+      "p1.note": "Créateur du projet et du collectif. Il a préparé le contenu des films et prête sa voix, à la fois pour la narration et le doublage.",
       "p1.full": `
         <p>Depuis plus de trois décennies, je consacre ma carrière à la transmission de la culture, de l'histoire et du patrimoine égyptiens auprès du public francophone et arabophone.</p>
         <p>Ancien guide-conférencier francophone depuis 1990, diplômé du Collège des Jésuites du Caire, j'ai construit un parcours fondé sur la maîtrise de la langue française, l'excellence de la narration et la passion de l'Égypte.</p>
@@ -121,6 +122,7 @@
       "crew.more": "السيرة الكاملة",
       "p1.role": "مُقدِّم · راوٍ · تعليق صوتي احترافي (فرنسي / عربي)", "p1.name": "وائل الألفي",
       "p1.sum": "مُقدِّم وراوٍ في قناة النيل الدولية، ومؤدّي تعليق صوتي احترافي بالفرنسية والعربية، في خدمة تراث مصر منذ أكثر من ثلاثة عقود.",
+      "p1.note": "مؤسّس المشروع والفريق. أعدّ محتوى الأفلام، ويُعير صوته للتعليق الصوتي والأداء الصوتي معًا.",
       "p1.full": `
         <p>منذ أكثر من ثلاثة عقود، كرّستُ مسيرتي لنقل الثقافة والتاريخ والتراث المصري إلى الجمهور الناطق بالفرنسية والعربية.</p>
         <p>مرشد سياحي ومحاضر باللغة الفرنسية منذ عام 1990، وخريج كلية اليسوعيين بالقاهرة، بنيتُ مسيرةً تقوم على إتقان اللغة الفرنسية، والتميّز في السرد، وعشق مصر.</p>
@@ -212,6 +214,28 @@
   let savedLang = "en";
   try { savedLang = localStorage.getItem("ehf-lang") || "en"; } catch (e) { /* private mode */ }
   if (savedLang !== "en") setLang(savedLang);
+
+  /* 0b. THEME — light is the base; "dark" is the optional night mood.
+        (A tiny inline script in <head> applies a saved dark mood before paint.) */
+  const themeToggle = $("#themeToggle");
+  const root = document.documentElement;
+  function setTheme(mode) {
+    const dark = mode === "dark";
+    if (dark) root.setAttribute("data-theme", "dark");
+    else root.removeAttribute("data-theme");
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to night mode");
+      themeToggle.setAttribute("title", dark ? "Light mode" : "Night mode");
+    }
+    try { localStorage.setItem("ehf-theme", mode); } catch (e) { /* private mode */ }
+  }
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+    });
+    // sync the button label with whatever the head script already applied
+    setTheme(root.getAttribute("data-theme") === "dark" ? "dark" : "light");
+  }
 
   /* 1. LOADER — hold on the title card, then fade to the site */
   const loader = $("#loader");
