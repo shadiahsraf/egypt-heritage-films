@@ -589,8 +589,10 @@ html[lang="ar"] .person__note { font-style: normal; }
 .modal.open { opacity: 1; visibility: visible; }
 .modal__dialog { width: min(1000px, 100%); transform: translateY(16px); transition: transform 0.7s var(--ease); }
 .modal.open .modal__dialog { transform: none; }
-.modal__frame { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 2px; background: #000; box-shadow: var(--shadow); border: 1px solid var(--line); }
-.modal__frame iframe { width: 100%; height: 100%; border: 0; display: block; background: #000; }
+/* padding-ratio keeps a true 16:9 on every browser (aspect-ratio is unreliable
+   on iframes in some mobile browsers, which left the Drive player broken). */
+.modal__frame { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden; border-radius: 2px; background: #000; box-shadow: var(--shadow); border: 1px solid var(--line); }
+.modal__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: #000; }
 .modal__cap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap; }
 .modal__cap h3 { font-family: var(--font-display); font-weight: 400; color: var(--bone); font-size: 1.2rem; }
 .modal__cap p { color: var(--ash); font-size: 0.9rem; }
