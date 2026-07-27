@@ -305,6 +305,20 @@
   const modalClose = $("#modalClose");
   let lastFocused = null;
 
+  // cross-browser fullscreen helpers
+  const fsElement = () => document.fullscreenElement || document.webkitFullscreenElement || null;
+  function enterFullscreen(el) {
+    const fn = el.requestFullscreen || el.webkitRequestFullscreen || el.webkitEnterFullscreen;
+    if (!fn) return false;
+    try { const p = fn.call(el); if (p && p.catch) p.catch(() => {}); return true; }
+    catch (e) { return false; }
+  }
+  function exitFullscreen() {
+    if (!fsElement()) return;
+    const fn = document.exitFullscreen || document.webkitExitFullscreen;
+    if (fn) { try { fn.call(document); } catch (e) {} }
+  }
+
   function openModal(el) {
     lastFocused = document.activeElement;
     const src = el.dataset.video;
@@ -319,14 +333,22 @@
     modal.classList.add("open");
     document.body.style.overflow = "hidden";
     modalClose.focus();
+    // Go straight to fullscreen on the player (kept in the click gesture).
+    // If the browser refuses (e.g. iOS iframes), the modal stays as the fallback.
+    if (src) enterFullscreen(modalFrame);
   }
   function closeModal() {
+    if (fsElement()) exitFullscreen();
     modal.classList.remove("open");
     document.body.style.overflow = "";
     // Dropping the src stops Drive playback once the fade-out finishes.
     setTimeout(() => { modalFrame.removeAttribute("src"); }, 500);
     if (lastFocused) lastFocused.focus();
   }
+  // Leaving fullscreen (back gesture / Esc) closes the modal too.
+  const onFsChange = () => { if (!fsElement() && modal.classList.contains("open")) closeModal(); };
+  document.addEventListener("fullscreenchange", onFsChange);
+  document.addEventListener("webkitfullscreenchange", onFsChange);
 
   $$(".film").forEach(el => {
     el.setAttribute("tabindex", "0");
