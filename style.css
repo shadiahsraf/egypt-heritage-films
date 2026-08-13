@@ -705,7 +705,8 @@ html[lang="ar"] .bio__quote { font-style: normal; }
   .lang button { padding: 0.28rem 0.34rem; font-size: 0.62rem; }
   .nav__right { gap: 0.4rem; }
 
-  .theme { width: 30px; height: 30px; }
+  .theme, .nav__ig { width: 30px; height: 30px; }
+  .theme svg, .nav__ig svg { width: 16px; height: 16px; }
 
   .hero { min-height: 92svh; }
   .hero__logo { width: clamp(120px, 34vw, 180px); }
@@ -753,6 +754,11 @@ html[lang="ar"] .bio__quote { font-style: normal; }
 .lang button + button { border-inline-start: 1px solid var(--line-soft); }
 .lang button:hover { color: var(--bone); }
 .lang button.active { color: var(--brass); }
+
+/* Instagram link in the nav */
+.nav__ig { display: inline-grid; place-items: center; width: 34px; height: 34px; color: var(--ash); border-radius: 50%; transition: color 0.3s var(--ease), background 0.3s var(--ease); }
+.nav__ig:hover { color: var(--brass); background: rgba(150,116,40,0.10); }
+.nav__ig svg { width: 18px; height: 18px; }
 
 /* night / light mood toggle */
 .theme { display: inline-grid; place-items: center; width: 34px; height: 34px; color: var(--ash); border-radius: 50%; transition: color 0.3s var(--ease), background 0.3s var(--ease); }
